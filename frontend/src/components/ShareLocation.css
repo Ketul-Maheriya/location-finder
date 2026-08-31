@@ -1,0 +1,605 @@
+/* ================================
+   SHARE LOCATION PAGE
+================================ */
+
+.share-page {
+    min-height: 100vh;
+    width: 100%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    position: relative;
+    overflow: hidden;
+
+    padding: 40px 20px;
+
+    background:
+        radial-gradient(
+            circle at 20% 20%,
+            rgba(37, 99, 235, 0.08),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 80% 80%,
+            rgba(59, 130, 246, 0.08),
+            transparent 30%
+        ),
+        #f6f8fc;
+}
+
+
+/* Background glow */
+
+.share-glow {
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    filter: blur(90px);
+
+    pointer-events: none;
+}
+
+.share-glow-one {
+    top: -150px;
+    left: -120px;
+
+    background: rgba(37, 99, 235, 0.10);
+}
+
+.share-glow-two {
+    bottom: -150px;
+    right: -120px;
+
+    background: rgba(96, 165, 250, 0.12);
+}
+
+
+/* Main card */
+
+.share-card {
+    width: 100%;
+    max-width: 540px;
+
+    position: relative;
+    z-index: 2;
+
+    background: rgba(255, 255, 255, 0.94);
+
+    border: 1px solid rgba(226, 232, 240, 0.9);
+
+    border-radius: 32px;
+
+    padding: 48px 44px 32px;
+
+    box-shadow:
+        0 30px 80px rgba(15, 23, 42, 0.10),
+        0 8px 25px rgba(15, 23, 42, 0.04);
+
+    text-align: center;
+
+    animation: cardEnter 0.7s ease forwards;
+}
+
+
+/* Card animation */
+
+@keyframes cardEnter {
+
+    from {
+        opacity: 0;
+        transform: translateY(25px) scale(0.98);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+
+}
+
+
+/* ================================
+   LOCATION ICON
+================================ */
+
+.location-icon-wrapper {
+    width: 100px;
+    height: 100px;
+
+    position: relative;
+
+    margin: 0 auto 28px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.location-icon {
+    width: 76px;
+    height: 76px;
+
+    position: relative;
+    z-index: 3;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 24px;
+
+    color: #2563eb;
+
+    background: #eff6ff;
+
+    box-shadow:
+        0 10px 30px rgba(37, 99, 235, 0.12);
+}
+
+
+/* Pulse animation */
+
+.location-pulse {
+    position: absolute;
+
+    width: 76px;
+    height: 76px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(37, 99, 235, 0.25);
+
+    animation: locationPulse 3s ease-out infinite;
+}
+
+
+.pulse-two {
+    animation-delay: 1.5s;
+}
+
+
+@keyframes locationPulse {
+
+    0% {
+        transform: scale(0.8);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform: scale(1.8);
+        opacity: 0;
+    }
+
+}
+
+
+/* ================================
+   HEADER
+================================ */
+
+.share-header {
+    margin-bottom: 28px;
+}
+
+
+.small-brand {
+    font-size: 11px;
+
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    color: #2563eb;
+
+    margin-bottom: 12px;
+}
+
+
+.share-header h1 {
+    margin: 0 0 14px;
+
+    color: #0f172a;
+
+    font-size: 34px;
+
+    line-height: 1.15;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+}
+
+
+.share-header p {
+    max-width: 390px;
+
+    margin: 0 auto;
+
+    color: #64748b;
+
+    font-size: 17px;
+
+    line-height: 1.6;
+}
+
+
+/* ================================
+   PRIVACY BOX
+================================ */
+
+.privacy-box {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 13px;
+
+    text-align: left;
+
+    padding: 17px;
+
+    margin-bottom: 25px;
+
+    border-radius: 18px;
+
+    background: #f8fafc;
+
+    border: 1px solid #e2e8f0;
+
+    color: #2563eb;
+}
+
+
+.privacy-box div {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 4px;
+}
+
+
+.privacy-box strong {
+    color: #0f172a;
+
+    font-size: 14px;
+}
+
+
+.privacy-box span {
+    color: #64748b;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+/* ================================
+   BUTTON
+================================ */
+
+.share-location-button {
+    width: 100%;
+
+    min-height: 60px;
+
+    border: none;
+
+    border-radius: 17px;
+
+    background: #2563eb;
+
+    color: white;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    box-shadow:
+        0 10px 25px rgba(37, 99, 235, 0.25);
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease,
+        background 0.2s ease;
+}
+
+
+.share-location-button:hover:not(:disabled) {
+    transform: translateY(-2px);
+
+    background: #1d4ed8;
+
+    box-shadow:
+        0 15px 30px rgba(37, 99, 235, 0.30);
+}
+
+
+.share-location-button:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+
+.share-location-button:disabled {
+    cursor: not-allowed;
+
+    opacity: 0.75;
+}
+
+
+/* Loading animation */
+
+.loading-icon {
+    animation: spin 1s linear infinite;
+}
+
+
+@keyframes spin {
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* Permission text */
+
+.permission-hint {
+    margin: 14px 0 0;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    line-height: 1.5;
+}
+
+
+.permission-hint strong {
+    color: #475569;
+}
+
+
+/* ================================
+   ERROR
+================================ */
+
+.error-message {
+    margin-top: 18px;
+
+    padding: 13px 16px;
+
+    border-radius: 13px;
+
+    color: #b91c1c;
+
+    background: #fef2f2;
+
+    border: 1px solid #fecaca;
+
+    font-size: 13px;
+}
+
+
+/* ================================
+   SUCCESS
+================================ */
+
+.location-success {
+    padding: 25px;
+
+    margin-top: 10px;
+
+    border-radius: 22px;
+
+    background: #f0fdf4;
+
+    border: 1px solid #bbf7d0;
+
+    animation: successEnter 0.5s ease forwards;
+}
+
+
+@keyframes successEnter {
+
+    from {
+        opacity: 0;
+        transform: scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+}
+
+
+.success-icon {
+    width: 58px;
+    height: 58px;
+
+    margin: 0 auto 14px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    color: #16a34a;
+
+    background: #dcfce7;
+}
+
+
+.location-success h2 {
+    margin: 0 0 7px;
+
+    color: #166534;
+
+    font-size: 22px;
+}
+
+
+.location-success > p {
+    margin: 0 0 20px;
+
+    color: #4d7c5b;
+
+    font-size: 14px;
+}
+
+
+/* Location data */
+
+.location-details {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 8px;
+}
+
+
+.location-details div {
+    padding: 12px 8px;
+
+    border-radius: 13px;
+
+    background: rgba(255, 255, 255, 0.7);
+
+    border: 1px solid rgba(187, 247, 208, 0.8);
+}
+
+
+.location-details span {
+    display: block;
+
+    margin-bottom: 5px;
+
+    color: #65a374;
+
+    font-size: 10px;
+
+    text-transform: uppercase;
+
+    letter-spacing: 0.5px;
+}
+
+
+.location-details strong {
+    display: block;
+
+    color: #166534;
+
+    font-size: 13px;
+
+    word-break: break-word;
+}
+
+
+
+.stop-button {
+
+    width: 100%;
+
+    min-height: 50px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 12px;
+
+    background: rgb(4, 88, 233);
+
+    color: #fcfdfe;
+
+    font-size: 15px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+}
+
+
+.stop-button:hover {
+
+    background: #0c6bca;
+}
+
+
+
+/* ================================
+   FOOTER
+================================ */
+
+.secure-footer {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 7px;
+
+    margin-top: 27px;
+
+    color: #94a3b8;
+
+    font-size: 12px;
+}
+
+
+.secure-footer svg {
+    color: #64748b;
+}
+
+
+/* ================================
+   MOBILE
+================================ */
+
+@media (max-width: 600px) {
+
+    .share-page {
+        padding: 20px 14px;
+    }
+
+    .share-card {
+        padding: 38px 22px 27px;
+
+        border-radius: 26px;
+    }
+
+    .share-header h1 {
+        font-size: 29px;
+    }
+
+    .share-header p {
+        font-size: 16px;
+    }
+
+    .location-details {
+        grid-template-columns: 1fr;
+    }
+
+}
